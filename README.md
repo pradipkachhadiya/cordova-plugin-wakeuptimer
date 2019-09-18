@@ -1,5 +1,7 @@
 # Wakeup/Alarm Clock PhoneGap/Cordova Plugin
 
+Modified version of https://github.com/jkhax0r/cordova-plugin-wakeuptimer
+
 ### Platform Support
 
 This plugin supports PhoneGap/Cordova apps running on both iOS and Android.
@@ -107,3 +109,18 @@ This plugin is meant to work with Cordova 3.5.0+.
             console.log('wakeup unhandled type (' + result.type + ')');
         }
     };
+	
+## From now user can set alarm bases on specific date and time.
+	window.wakeuptimer.snooze( successCallback,
+        errorCallback,
+        {
+            alarms : [{
+                type : 'snooze',
+                time : { milliseconds :  1500055465646 }, // snooze for 60 seconds
+                extra : { }, // json containing app-specific information to be posted when alarm triggers
+                message : this.get('message'),
+                sound : this.get('sound'),
+                action : this.get('action')
+            }]
+        }
+     );
